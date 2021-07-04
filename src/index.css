@@ -32,12 +32,18 @@ body{
     height: 20rem;
     width: 36rem;
     position: absolute;
-    transition: all .25s ease;
+    transition: left .25s ease,
+                transform .25s ease;
     user-select: none;
     overflow: hidden;
     z-index: 4;
     background: var(--bg);
     cursor: grab;
+    border-radius: 1rem;
+}
+
+.container > .noTransition{
+    transition: none;
 }
 
 .container > div:active{
@@ -93,9 +99,13 @@ div > span::after{
     left: -5rem;
 }
 
+span > * {
+    z-index: 1;
+}
+
 .yellow,
 .yellow::before,
-.purple::after{
+.yellow::after{
     background: rgba(242, 206, 0, .8);
 }
 
@@ -117,8 +127,8 @@ div > span::after{
     background: rgba(64, 142, 245, .8);
 }
 
-.gray,
-.gray::before,
-.gray::after{
-    background: rgba(100 , 100 , 100, .8);
+.black,
+.black::before,
+.black::after{
+    background: rgba(0, 0, 0, 0.8)
 }
